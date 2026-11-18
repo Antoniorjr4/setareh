@@ -1,0 +1,104 @@
+content:
+- name: articles
+  label: Caderno · artigos
+  type: file
+  path: data/articles.json
+  format: json
+  fields:
+  - name: id
+    label: 'Identificador permanente (ex.: olhar-a-lua)'
+    type: string
+    required: true
+    description: Use um identificador exclusivo para cada artigo.
+  - name: category
+    label: Categoria
+    type: select
+    options:
+      values:
+      - tradition
+      - symbols
+      - notes
+    required: true
+  - name: art
+    label: Ilustração de capa
+    type: select
+    options:
+      values:
+      - chart
+      - sun
+      - garden
+    required: true
+  - name: pt
+    label: Português
+    type: object
+    fields:
+    - name: title
+      label: Título
+      type: string
+      required: true
+    - name: summary
+      label: Chamada
+      type: text
+      required: true
+    - name: body
+      label: Texto · separe parágrafos com uma linha em branco
+      type: text
+      required: true
+  - name: en
+    label: English
+    type: object
+    fields:
+    - name: title
+      label: Título
+      type: string
+      required: true
+    - name: summary
+      label: Chamada
+      type: text
+      required: true
+    - name: body
+      label: Texto · separe parágrafos com uma linha em branco
+      type: text
+      required: true
+  list: true
+- name: questions
+  label: Perguntas e respostas
+  type: file
+  path: data/questions.json
+  format: json
+  fields:
+  - name: pt
+    label: Português
+    type: object
+    fields:
+    - name: title
+      label: Pergunta
+      type: string
+      required: true
+    - name: body
+      label: Resposta
+      type: text
+      required: true
+  - name: en
+    label: English
+    type: object
+    fields:
+    - name: title
+      label: Pergunta
+      type: string
+      required: true
+    - name: body
+      label: Resposta
+      type: text
+      required: true
+  list: true
+- name: site
+  label: Contato
+  type: file
+  path: data/site.json
+  format: json
+  fields:
+  - name: email
+    label: E-mail público para correspondência e pedidos de horário
+    type: string
+    description: Deixe vazio para manter os pedidos fechados.
